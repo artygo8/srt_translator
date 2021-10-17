@@ -24,7 +24,9 @@ class Translator:
         try:
             self.driver = webdriver.Firefox()
             self.lang = language
-            self.driver.get('https://' + 'w' * 3 + '.' + ''.join(chr(ord(i) + e) for e, i in enumerate('ddcml')) + '.com/' + language + '/translator') # OBFUSCATION
+            url = 'https://' + 'w' * 3 + '.' + ''.join(chr(ord(i) + e) for e, i in enumerate('ddcmh')) + '.com/' + language + '/translator'  # OBFUSCATION
+            self.driver.get(url)
+            
             time.sleep(2)
             self.source_textarea = self.driver.find_element_by_class_name('lmt__source_textarea')
             self.target_textarea = self.driver.find_element_by_class_name('lmt__target_textarea')
