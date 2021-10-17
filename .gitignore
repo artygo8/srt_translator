@@ -1,0 +1,4 @@
+*.srt
+*.log
+*.result
+.DS_Store
