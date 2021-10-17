@@ -75,7 +75,7 @@ if __name__ == '__main__':
         exit(colored(Color.RED, 'You need to provide a `.srt` file !'))
 
     input_file_name = sys.argv[1]
-    output_file_name = input_file_name.replace('.srt', '.translated_{translator.lang}.srt')
+    output_file_name = input_file_name.replace('.srt', f'.translated_{translator.lang}.srt')
 
     with open(input_file_name, 'r') as infile:
         with open(output_file_name, 'w+') as outfile:
