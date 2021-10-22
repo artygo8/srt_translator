@@ -15,7 +15,7 @@ class Color:
     GREEN = (100, 255, 100)
     BLUE = (100, 100, 255)
 
-colored = lambda rgb, text : f'\033[38;2;{rgb[0]};{rgb[1]};{rgb[2]}m{text}\033[30m'
+colored = lambda rgb, text : f'\033[38;2;{rgb[0]};{rgb[1]};{rgb[2]}m{text}\033[m'
 
 
 class Translator:
@@ -40,7 +40,7 @@ class Translator:
         ''' Since we can translate only 5k characters in Translator.'''
         self.source_textarea.clear()
         self.source_textarea.send_keys(subcontent)
-        time.sleep(len(subcontent) // 500 + 2)
+        time.sleep(len(subcontent) // 300 + 2)
         self.target_textarea.send_keys(Keys.META, 'a')
         self.target_textarea.send_keys(Keys.META, 'c')
         return pyperclip.paste()
